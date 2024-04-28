@@ -8,7 +8,7 @@ const Options = ({
   resp: { good, neutral, bad, reset },
 }) => {
   return (
-    <div>
+    <div className={css.wrapper}>
       <button onClick={() => updateFeedback("good")} type="button">
         {good}
       </button>

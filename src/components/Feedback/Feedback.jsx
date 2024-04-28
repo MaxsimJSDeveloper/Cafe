@@ -6,7 +6,7 @@ function Feedback({
   feedback: { good, neutral, bad },
 }) {
   return (
-    <ul>
+    <ul className={css.indent}>
       <li>Good: {good}</li>
       <li>Neutral: {neutral}</li>
       <li>Bad: {bad}</li>
