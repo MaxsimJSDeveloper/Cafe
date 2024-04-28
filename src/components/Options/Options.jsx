@@ -1,6 +1,12 @@
+// Options.jsx
 import css from "./Options.module.css";
 
-const Options = ({ updateFeedback, resp: { good, neutral, bad, reset } }) => {
+const Options = ({
+  totalFeedback,
+  handleReset,
+  updateFeedback,
+  resp: { good, neutral, bad, reset },
+}) => {
   return (
     <div>
       <button onClick={() => updateFeedback("good")} type="button">
@@ -12,9 +18,11 @@ const Options = ({ updateFeedback, resp: { good, neutral, bad, reset } }) => {
       <button onClick={() => updateFeedback("bad")} type="button">
         {bad}
       </button>
-      <button onClick={() => updateFeedback("reset")} type="button">
-        {reset}
-      </button>
+      {totalFeedback > 0 && (
+        <button onClick={handleReset} type="button">
+          {reset}
+        </button>
+      )}
     </div>
   );
 };
