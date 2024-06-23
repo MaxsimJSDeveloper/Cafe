@@ -1,4 +1,4 @@
-.indent {
+.box {
   margin-top: 20px;
   padding: 8px;
   border-radius: 8px;
@@ -7,9 +7,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
 }
 
-.item {
-  font-size: 18px;
+.txt {
+  font-size: 32px;
 }

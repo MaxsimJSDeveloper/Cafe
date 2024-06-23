@@ -1,4 +1,17 @@
 .wrapper {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 120px;
+  height: 50px;
+  border-radius: 12px;
+  background-color: #cb7300;
+  color: #ffecec;
+  font-size: 20px;
+}
+
+.btn:hover {
+  background-color: #ab6100;
 }

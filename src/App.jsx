@@ -4,8 +4,9 @@ import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import Feedback from "./components/Feedback/Feedback";
 import Notification from "./components/Notification/Notification";
-
 import resp from "./resp.json";
+
+import "./App.css";
 
 const App = () => {
   const [feedback, setFeedback] = useState(() => {
@@ -34,7 +35,7 @@ const App = () => {
   }, [feedback]);
 
   return (
-    <div>
+    <div className="container">
       <Description
         name={"Sip Happens Café"}
         descr={

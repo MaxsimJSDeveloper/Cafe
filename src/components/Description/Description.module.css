@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: #ffc67b;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.title {
+  font-size: 48px;
+  color: #111111;
+}
+
+.descr {
+  font-size: 18px;
+  color: #111111;
+  margin-bottom: 20px;
+}

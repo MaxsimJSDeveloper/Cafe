@@ -1,19 +1,21 @@
 import css from "./Feedback.module.css";
 
-function Feedback({
-  totalFeedback,
-  positiveFeedback,
-  feedback: { good, neutral, bad },
-}) {
+const Feedback = (props) => {
+  const {
+    totalFeedback,
+    positiveFeedback,
+    feedback: { good, neutral, bad },
+  } = props;
+
   return (
     <ul className={css.indent}>
-      <li>Good: {good}</li>
-      <li>Neutral: {neutral}</li>
-      <li>Bad: {bad}</li>
-      <li>Positive: {positiveFeedback}%</li>
-      <li>Total: {totalFeedback}</li>
+      <li className={css.item}>Good: {good}</li>
+      <li className={css.item}>Neutral: {neutral}</li>
+      <li className={css.item}>Bad: {bad}</li>
+      <li className={css.item}>Positive: {positiveFeedback}%</li>
+      <li className={css.item}>Total: {totalFeedback}</li>
     </ul>
   );
-}
+};
 
 export default Feedback;

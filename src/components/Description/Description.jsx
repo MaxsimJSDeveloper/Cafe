@@ -3,8 +3,10 @@ import css from "./Description.module.css";
 const Description = ({ name, descr }) => {
   return (
     <>
-      <h1>{name}</h1>
-      <p>{descr}</p>
+      <div className={css.wrap}>
+        <h1 className={css.title}>{name}</h1>
+      </div>
+      <p className={css.descr}>{descr}</p>
     </>
   );
 };
