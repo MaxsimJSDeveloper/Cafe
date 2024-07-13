@@ -41,3 +41,9 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+body {
+  background: url("/bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

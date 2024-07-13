@@ -1,6 +1,7 @@
 import css from "./Description.module.css";
+import { propsDescription } from "./Description.types";
 
-const Description = ({ name, descr }) => {
+const Description: React.FC<propsDescription> = ({ name, descr }) => {
   return (
     <>
       <div className={css.wrap}>

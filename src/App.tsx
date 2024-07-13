@@ -8,8 +8,14 @@ import resp from "./resp.json";
 
 import "./App.css";
 
+interface FeedbackState {
+  good: number;
+  neutral: number;
+  bad: number;
+}
+
 const App = () => {
-  const [feedback, setFeedback] = useState(() => {
+  const [feedback, setFeedback] = useState<FeedbackState>(() => {
     const savedFeedback = localStorage.getItem("feedback");
     return savedFeedback
       ? JSON.parse(savedFeedback)
@@ -19,7 +25,7 @@ const App = () => {
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
   const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
-  const updateFeedback = (feedbackType) => {
+  const updateFeedback = (feedbackType: keyof FeedbackState) => {
     setFeedback((prevFeedback) => ({
       ...prevFeedback,
       [feedbackType]: prevFeedback[feedbackType] + 1,
