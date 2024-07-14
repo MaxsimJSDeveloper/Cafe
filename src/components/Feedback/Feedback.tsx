@@ -1,12 +1,11 @@
 import css from "./Feedback.module.css";
+import { propsDescription } from "./Feedback.types";
 
-const Feedback = (props) => {
-  const {
-    totalFeedback,
-    positiveFeedback,
-    feedback: { good, neutral, bad },
-  } = props;
-
+const Feedback: React.FC<propsDescription> = ({
+  totalFeedback,
+  positiveFeedback,
+  feedback: { good, neutral, bad },
+}) => {
   return (
     <ul className={css.indent}>
       <li className={css.item}>Good: {good}</li>

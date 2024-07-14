@@ -14,6 +14,13 @@ interface FeedbackState {
   bad: number;
 }
 
+interface Resp {
+  good: string;
+  neutral: string;
+  bad: string;
+  reset: string;
+}
+
 const App = () => {
   const [feedback, setFeedback] = useState<FeedbackState>(() => {
     const savedFeedback = localStorage.getItem("feedback");
@@ -22,8 +29,10 @@ const App = () => {
       : { good: 0, neutral: 0, bad: 0 };
   });
 
-  const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
-  const positiveFeedback = Math.round((feedback.good / totalFeedback) * 100);
+  const totalFeedback: number = feedback.good + feedback.neutral + feedback.bad;
+  const positiveFeedback: number = Math.round(
+    (feedback.good / totalFeedback) * 100
+  );
 
   const updateFeedback = (feedbackType: keyof FeedbackState) => {
     setFeedback((prevFeedback) => ({
@@ -40,19 +49,18 @@ const App = () => {
     localStorage.setItem("feedback", JSON.stringify(feedback));
   }, [feedback]);
 
+  const name: string = "Sip Happens Café";
+  const descr: string =
+    "Please leave your feedback about our service by selecting one of the options below ";
+
   return (
     <div className="container">
-      <Description
-        name={"Sip Happens Café"}
-        descr={
-          "Please leave your feedback about our service by selecting one of the options below."
-        }
-      />
+      <Description name={name} descr={descr} />
       <Options
         totalFeedback={totalFeedback}
         handleReset={handleReset}
         updateFeedback={updateFeedback}
-        resp={resp}
+        resp={resp as Resp}
       />
       {totalFeedback > 0 ? (
         <Feedback

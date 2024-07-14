@@ -1,13 +1,12 @@
 import css from "./Options.module.css";
+import { OptionProps } from "./Options.types";
 
-const Options = (props) => {
-  const {
-    totalFeedback,
-    handleReset,
-    updateFeedback,
-    resp: { good, neutral, bad, reset },
-  } = props;
-
+const Options: React.FC<OptionProps> = ({
+  totalFeedback,
+  handleReset,
+  updateFeedback,
+  resp: { good, neutral, bad, reset },
+}) => {
   return (
     <div className={css.wrapper}>
       <button
